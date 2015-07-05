@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>kissy</title>
+	<meta name="viewport"content="width=device-width,minimum-scale=1.0,maximum-scale=10,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<style type="text/css">
+
+		.slider-active .fLeft{
+			-webkit-animation:fadeInLeft 1.5s ease-out both;
+			-moz-animation:fadeInLeft 1.5s ease-out both;
+			animation:fadeInLeft 1.5s ease-out both;
+		}
+		@-moz-keyframes fadeInLeft{
+			0%{opacity:0;-moz-transform:translateX(-160px);}
+			25%{opacity:0.3;-moz-transform:translateX(-120px);}
+			50%{opacity:0.6;-moz-transform:translateX(-80px);}
+			75%{opacity:0.7;-moz-transform:translateX(-40px);}
+			100%{opacity:1;-moz-transform:translateX(0);}
+		}
+		@-webkit-keyframes fadeInLeft{
+			0%{opacity:0;-webkit-transform:translateX(-160px);}
+			25%{opacity:0.3;-webkit-transform:translateX(-120px);}
+			50%{opacity:0.6;-webkit-transform:translateX(-80px);}
+			75%{opacity:0.7;-webkit-transform:translateX(-40px);}
+			100%{opacity:1;-webkit-transform:translateX(0);}
+		}
+		@keyframes fadeInLeft{
+			0%{opacity:0;transform:translateX(-160px);}
+			25%{opacity:0.3;transform:translateX(-120px);}
+			50%{opacity:0.6;transform:translateX(-80px);}
+			75%{opacity:0.7;transform:translateX(-40px);}
+			100%{opacity:1;transform:translateX(0);}
+		}
+
+		.slider-active .fRight{
+			-webkit-animation:fadeInRight 1.5s ease-out  both;
+			-moz-animation:fadeInRight 1.5s ease-out  both;
+			-o-animation:fadeInRight 1.5s ease-out  both;
+			animation:fadeInRight 1.5s ease-out  both;
+		}
+		.slider-active .fRight2{
+			-webkit-animation:fadeInRight 1.5s 1s ease-in both;
+			-moz-animation:fadeInRight 1.5s 1s ease-in both;
+			-o-animation:fadeInRight 1.5s 1s ease-in both;
+			animation:fadeInRight 1.5s 1s ease-in both;
+		}
+		@-webkit-keyframes fadeInRight{
+			0%{opacity:0;-webkit-transform:translateX(160px);}
+			25%{opacity:0.3;-webkit-transform:translateX(120px);}
+			50%{opacity:0.6;-webkit-transform:translateX(80px);}
+			75%{opacity:0.7;-webkit-transform:translateX(40px);}
+			100%{opacity:1;-webkit-transform:translateX(0);}
+		}
+		@-moz-keyframes fadeInRight{
+			0%{opacity:0;-moz-transform:translateX(160px);}
+			25%{opacity:0.3;-moz-transform:translateX(120px);}
+			50%{opacity:0.6;-moz-transform:translateX(80px);}
+			75%{opacity:0.7;-moz-transform:translateX(40px);}
+			100%{opacity:1;-moz-transform:translateX(0);}
+		}
+		@-o-keyframes fadeInRight{
+			0%{opacity:0;-o-transform:translateX(160px);}
+			25%{opacity:0.3;-o-transform:translateX(120px);}
+			50%{opacity:0.6;-o-transform:translateX(80px);}
+			75%{opacity:0.7;-o-transform:translateX(40px);}
+			100%{opacity:1;-o-transform:translateX(0);}
+		}
+		@keyframes fadeInRight{
+			0%{opacity:0;transform:translateX(160px);}
+			25%{opacity:0.3;transform:translateX(120px);}
+			50%{opacity:0.6;transform:translateX(80px);}
+			75%{opacity:0.7;transform:translateX(40px);}
+			100%{opacity:1;transform:translateX(0);}
+		}
+
+		.slider-active .fUp{
+			-webkit-animation:fadeInUp 2s ease-in both;
+			-moz-animation:fadeInUp 2s ease-in both;
+			-o-animation:fadeInUp 2s ease-in both;
+			animation:fadeInUp 2s ease-in both;
+		}
+		@-webkit-keyframes fadeInUp{
+			0%{opacity:0;-webkit-transform:translateY(500px);}
+			25%{opacity:0.3;-webkit-transform:translateY(400px);}
+			50%{opacity:0.6;-webkit-transform:translateY(300px);}
+			75%{opacity:0.7;-webkit-transform:translateY(200px);}
+			90%{opacity:0.8;-webkit-transform:translateY(100px);}
+			100%{opacity:1;-webkit-transform:translateY(0);}
+		}
+		@-moz-keyframes fadeInUp{
+			0%{opacity:0;-moz-transform:translateY(500px);}
+			25%{opacity:0.3;-moz-transform:translateY(400px);}
+			50%{opacity:0.6;-moz-transform:translateY(300px);}
+			75%{opacity:0.7;-moz-transform:translateY(200px);}
+			90%{opacity:0.8;-moz-transform:translateY(100px);}
+			100%{opacity:1;-moz-transform:translateY(0);}
+		}
+		@-o-keyframes fadeInUp{
+			0%{opacity:0;-o-transform:translateY(500px);}
+			25%{opacity:0.3;-o-transform:translateY(400px);}
+			50%{opacity:0.6;-o-transform:translateY(300px);}
+			75%{opacity:0.7;-o-transform:translateY(200px);}
+			90%{opacity:0.8;-o-transform:translateY(100px);}
+			100%{opacity:1;-o-transform:translateY(0);}
+		}
+		@keyframes fadeInUp{
+			0%{opacity:0;transform:translateY(500px);}
+			25%{opacity:0.3;transform:translateY(400px);}
+			50%{opacity:0.6;transform:translateY(300px);}
+			75%{opacity:0.7;transform:translateY(200px);}
+			90%{opacity:0.8;transform:translateY(100px);}
+			100%{opacity:1;transform:translateY(0);}
+		}
+
+		.slider-active .fDown{
+			-webkit-animation:fadeInDown 2s ease-in both;
+			-moz-animation:fadeInDown 2s ease-in both;
+			-o-animation:fadeInDown 2s ease-in both;
+			animation:fadeInDown 2s ease-in both;
+		}
+		@-webkit-keyframes fadeInDown{
+			0%{opacity:0;-webkit-transform:translateY(-500px);}
+			25%{opacity:0.3;-webkit-transform:translateY(-400px);}
+			50%{opacity:0.6;-webkit-transform:translateY(-300px);}
+			75%{opacity:0.7;-webkit-transform:translateY(-200px);}
+			90%{opacity:0.8;-webkit-transform:translateY(-100px);}
+			100%{opacity:1;-webkit-transform:translateY(0);}
+		}
+		@-moz-keyframes fadeInDown{
+			0%{opacity:0;-moz-transform:translateY(-500px);}
+			25%{opacity:0.3;-moz-transform:translateY(-400px);}
+			50%{opacity:0.6;-moz-transform:translateY(-300px);}
+			75%{opacity:0.7;-moz-transform:translateY(-200px);}
+			90%{opacity:0.8;-moz-transform:translateY(-100px);}
+			100%{opacity:1;-moz-transform:translateY(0);}
+		}
+		@-o-keyframes fadeInDown{
+			0%{opacity:0;-o-transform:translateY(-500px);}
+			25%{opacity:0.3;-o-transform:translateY(-400px);}
+			50%{opacity:0.6;-o-transform:translateY(-300px);}
+			75%{opacity:0.7;-o-transform:translateY(-200px);}
+			90%{opacity:0.8;-o-transform:translateY(-100px);}
+			100%{opacity:1;-o-transform:translateY(0);}
+		}
+		@keyframes fadeInDown{
+			0%{opacity:0;transform:translateY(-500px);}
+			25%{opacity:0.3;transform:translateY(-400px);}
+			50%{opacity:0.6;transform:translateY(-300px);}
+			75%{opacity:0.7;transform:translateY(-200px);}
+			90%{opacity:0.8;transform:translateY(-100px);}
+			100%{opacity:1;transform:translateY(0);}
+		}
+
+		.nextpgae{
+			transform:translate3d(0,200px,200px) scale3d(1,1.7,1)  rotateX(-62deg);
+			
+		}
+
+		@keyframes nextprv{
+		
+		}
+
+
+
+
+
+		*{margin: 0;padding: 0;border: 0;}
+		.container{overflow: hidden;}
+		.page{position: relative;}
+		.page00{
+			background: url('images/1.jpg') no-repeat ;
+			background-size: 100% 100%;
+		}
+		.page2{
+			background: url('images/2.jpg') no-repeat ;
+			background-size: 100% 100%;			
+		}
+		.page01{
+			background: url('images/11.jpg') no-repeat ;
+			background-size: 100% 100%;
+		}
+		.page02{
+			background: url('images/22.jpg') no-repeat;
+			background-size: 100% 100%;
+		}
+		.img-box{ position:absolute; left:0px; width:100%; height:auto; text-align:center; z-index:200;}
+		.img00{top:14.7007%;left: 24%;}
+		.img00 img{width: 20%;}
+		.img01{top:25.70422%;left: -10%;}
+		.img01 img{width: 44.0625%;}
+		.img20{top:41.3978%;left: -24.4812%%;}
+		.img20 img{width: 25.3125%;}
+		.img21{top:81.3415%%;left: -4.4375%;}
+		.img21 img{width: 64.8437%;}
+		.slider{width: 100%;}
+	</style>
+</head>
+<body>
+	<div class="container" id="container">
+		<div class="slider" id="slider">
+			<section class="page page00">
+					<div class="img00  img-box fLeft"><img src="images/1_03.png"></div>
+					<div class="img01 img-box fRight"><img src="images/1_06.png"></div>
+			</section>
+			<section class="page page2">
+            	<div class="img20 img-box fRight"><img src="images/2_03.png"/></div>
+   	    		<div class="img21 img-box fLeft"><img src="images/2_06.png"/></div>
+            </section>
+			<section class="page page01">
+				
+			</section>
+			<section class="page page02">
+				
+			</section>
+	    </div>
+    </div>
+</body>
+<script src="http://g.alicdn.com/kissy/k/1.4.7/seed.js"></script>
+<script type="text/javascript">
+var sldPara={
+	distanceP:40,
+	cycle:true,
+}
+KISSY.add('sliderDiv',function(){
+	KISSY.use("node,dom,event,anim",function(S,Node,DOM,Event,Anim){
+		var tfm_cple=0,
+			$ = Node.all,
+			$page = $('.page'),
+			$slider = $('#slider'),
+			page_leg = $page.length,
+			windowHight = parseInt($(window).height()),
+			slide_dtce = sldPara.distanceP;
+
+		Event.on('#slider',"swipe",function(e){
+			S.log(e.type + ' : fired');
+            S.log(e.direction);
+            S.log(e.distance);
+            S.log(sliderPar.slide_dte);
+            if(e.direction=="down" && e.distance >slide_dtce){
+            	runAnim("down");
+            }else if(e.direction=="up" && e.distance >slide_dtce){
+            	 runAnim("up");
+            }
+		});
+
+		function tfmId(){
+			var now_tfm = tfm_cple/windowHight+1;
+			return now_tfm;
+		}
+
+		function runAnim(tfmDtc){
+			var now_tfm = tfmId();
+			if(tfmDtc=="down" ){
+   				var tfmUp = tfm_cple-windowHight;
+       			tfmAnim(now_tfm-1,tfmUp,"down");
+       		}else if(tfmDtc=="up"){
+       		    var tfmDown = tfm_cple+windowHight;
+				if(now_tfm!=page_leg){
+					 tfmAnim(now_tfm,tfmDown,"up");
+				}			
+       		}
+		}
+
+		function tfmAnim(addTarget,tfmHeight,tfmDtc){
+			$slider.animate(
+				{
+					transform:"translateY(-"+tfmHeight+"px)"				
+				},
+				{
+					complete:function(){
+						tfm_cple =  tfmUtil();
+					}
+				}
+			);
+			addActive(addTarget,"slider-active",tfmDtc);
+		}
+
+		function tfmUtil(){
+			var page_tfm = DOM.css("#slider","transform");
+     		var reg = /[1-9][0-9]*/g;  
+            var num = parseInt(page_tfm.match(reg)[2]); 
+            if(isNaN(num)){
+            	return 0;
+            }else{
+            	return num;
+            }
+			
+		}
+
+		function addActive(addTarget,activeClass,tfmDtc){
+			var prvTgt = addTarget-1;
+			var nextTgt = addTarget+1;
+			if(tfmDtc == "up"){
+					$page.item(addTarget).addClass(activeClass);
+					$page.item(prvTgt).removeClass(activeClass);
+				//	$page.item(prvTgt).addClass("nextpgae");
+					if(nextTgt<page_leg){
+						$page.item(nextTgt).removeClass(activeClass);
+					}
+			}else if(tfmDtc=="down"){
+				$page.item(prvTgt).addClass(activeClass);
+				$page.item(addTarget).removeClass(activeClass);
+			}
+		}
+
+
+	});
+});
+
+
+KISSY.ready(function(S){
+	KISSY.use("node,dom",function(S,Node,DOM){
+		var $ = Node.all;
+		var windowHight = $(window).height();
+		DOM.css('.page , #container',{height:windowHight+'px'});
+
+	});
+	KISSY.use('sliderDiv',function(){});
+
+});
+
+
+
+</script>
+</html>
