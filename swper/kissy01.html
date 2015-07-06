@@ -222,8 +222,8 @@
 <script src="http://g.alicdn.com/kissy/k/1.4.7/seed.js"></script>
 <script type="text/javascript">
 var sldPara={
-	distanceP:40,
-	cycle:true,
+	distanceP:40, //滑动距离
+	cycle:true, //是否回到第一页
 }
 KISSY.add('sliderDiv',function(){
 	KISSY.use("node,dom,event,anim",function(S,Node,DOM,Event,Anim){
@@ -239,7 +239,6 @@ KISSY.add('sliderDiv',function(){
 			S.log(e.type + ' : fired');
             S.log(e.direction);
             S.log(e.distance);
-            S.log(sliderPar.slide_dte);
             if(e.direction=="down" && e.distance >slide_dtce){
             	runAnim("down");
             }else if(e.direction=="up" && e.distance >slide_dtce){
@@ -259,9 +258,11 @@ KISSY.add('sliderDiv',function(){
        			tfmAnim(now_tfm-1,tfmUp,"down");
        		}else if(tfmDtc=="up"){
        		    var tfmDown = tfm_cple+windowHight;
-				if(now_tfm!=page_leg){
+				if(now_tfm==page_leg && sldPara.cycle==true){
+					 tfmAnim(now_tfm,0,"up");	
+				}else if(now_tfm!=page_leg){
 					 tfmAnim(now_tfm,tfmDown,"up");
-				}			
+				}	
        		}
 		}
 
@@ -295,18 +296,20 @@ KISSY.add('sliderDiv',function(){
 			var prvTgt = addTarget-1;
 			var nextTgt = addTarget+1;
 			if(tfmDtc == "up"){
+				if(addTarget==page_leg){
+					$page.item(0).addClass(activeClass);
+				}else{
 					$page.item(addTarget).addClass(activeClass);
-					$page.item(prvTgt).removeClass(activeClass);
-				//	$page.item(prvTgt).addClass("nextpgae");
-					if(nextTgt<page_leg){
-						$page.item(nextTgt).removeClass(activeClass);
-					}
+				}
+				$page.item(prvTgt).removeClass(activeClass);
+				if(nextTgt<page_leg){
+					$page.item(nextTgt).removeClass(activeClass);
+				}
 			}else if(tfmDtc=="down"){
 				$page.item(prvTgt).addClass(activeClass);
 				$page.item(addTarget).removeClass(activeClass);
 			}
 		}
-
 
 	});
 });
