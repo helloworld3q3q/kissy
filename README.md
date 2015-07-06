@@ -16,7 +16,7 @@ var sldPara={
 	distanceP:40, //滑动距离
 	cycle:true, //是否回到第一页
 }
-/*×endstart**/
+/**endstart**/
 
 
 KISSY.add('sliderDiv',function(){
